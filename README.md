@@ -4,7 +4,7 @@ Dashboard Streamlit que compara temperaturas do ar a 2 m para localidades de um 
 
 ## Acessar sem instalar
 
-É possível publicar o dashboard no [Streamlit Community Cloud](https://streamlit.io/cloud), para que outras pessoas abram a aplicação pelo navegador sem instalar Python ou dependências localmente. **Este repositório ainda não tem um endereço público do dashboard**; depois que a aplicação for publicada, coloque aqui o link `https://...streamlit.app`.
+Abra o [dashboard Projeto Clima](https://projetoclima-lj2xvqbpqynq2whnvojjuk.streamlit.app/) no navegador, sem instalar Python ou dependências localmente. O app está hospedado no [Streamlit Community Cloud](https://streamlit.io/cloud).
 
 Para publicar, entre no Community Cloud com GitHub, escolha **Create app** e informe:
 
