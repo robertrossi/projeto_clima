@@ -102,7 +102,7 @@ Com MkDocs Material e Taskipy instalados no grupo de desenvolvimento:
 uv run task docs
 ```
 
-O comando inicia a pré-visualização local. Para validar ou gerar o site estático em `site/`:
+O comando inicia a pré-visualização local em [http://127.0.0.1:8001](http://127.0.0.1:8001). Deixe o terminal aberto enquanto usa o site. Para validar ou gerar o site estático em `site/`:
 
 ```bash
 uv run task docs-build
