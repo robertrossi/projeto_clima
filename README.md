@@ -2,6 +2,28 @@
 
 Dashboard Streamlit que compara temperaturas do ar a 2 m para localidades de um catálogo configurável, com filtros por país/estado e consultas atuais, futuras e históricas.
 
+## Acessar sem instalar
+
+É possível publicar o dashboard no [Streamlit Community Cloud](https://streamlit.io/cloud), para que outras pessoas abram a aplicação pelo navegador sem instalar Python ou dependências localmente. **Este repositório ainda não tem um endereço público do dashboard**; depois que a aplicação for publicada, coloque aqui o link `https://...streamlit.app`.
+
+Para publicar, entre no Community Cloud com GitHub, escolha **Create app** e informe:
+
+- Repositório: `robertrossi/projeto_clima`
+- Branch: `main`
+- Arquivo principal: `src/projeto_clima/app.py`
+- Versão do Python: `3.12`
+
+Envie o código para o GitHub antes de publicar. O repositório inclui `uv.lock` para declarar as dependências. Consulte o [guia oficial de implantação](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy). O app só fica acessível pelo navegador depois que a implantação for concluída.
+
+## Clonar o projeto
+
+Com Git instalado, clone o repositório e entre na pasta:
+
+```powershell
+git clone https://github.com/robertrossi/projeto_clima.git
+cd projeto_clima
+```
+
 ## Requisitos e execução
 
 Requer Python 3.11.5–3.12 e [uv](https://docs.astral.sh/uv/).
@@ -20,6 +42,46 @@ O modo **Agora** envia as coordenadas em lote para `https://api.open-meteo.com/v
 Cada máxima diária corresponde ao dia local da cidade. Por isso, cidades em fusos diferentes podem representar períodos UTC diferentes, mesmo quando a data no painel é a mesma. Só valores numéricos válidos participam do ranking; empates são resolvidos pelo nome em ordem alfabética. A tabela mostra data local, fuso, coordenadas solicitadas e da célula de grade, além de dados ignorados.
 
 Os dados ficam em cache por 5 minutos; use **Atualizar agora** para forçar uma consulta. A aplicação não persiste respostas localmente. O catálogo de exemplo é pequeno e não representa cobertura geográfica completa. Consulte o [site de documentação](docs/index.md) e a referência de [uso da API](docs/api.md).
+
+## Estrutura do projeto
+
+```text
+projeto_clima/
+├── config/
+│   └── locations.example.csv   # catálogo de exemplo
+├── docs/                       # documentação do MkDocs
+│   ├── api.md
+│   ├── arquitetura.md
+│   ├── desenvolvimento.md
+│   ├── index.md
+│   └── uso.md
+├── gpt/                        # plano e notas de desenvolvimento
+│   ├── PLAN.md
+│   ├── SKILL.md
+│   └── doc_api.md
+├── src/projeto_clima/
+│   ├── __init__.py
+│   ├── app.py                  # interface Streamlit
+│   ├── clients/
+│   │   ├── __init__.py
+│   │   └── open_meteo.py       # cliente da API Open-Meteo
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── ranking.py          # transformação e ranking
+│   └── storage/
+│       ├── __init__.py
+│       └── locations.py        # leitura e validação do CSV
+├── tests/unit/
+│   ├── test_locations.py
+│   ├── test_open_meteo.py
+│   └── test_ranking.py
+├── .gitignore
+├── .python-version
+├── mkdocs.yml                  # configuração da documentação
+├── pyproject.toml              # dependências e ferramentas
+├── uv.lock                     # versões resolvidas pelo uv
+└── README.md
+```
 
 ## Desenvolvimento
 
