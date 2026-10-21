@@ -1,5 +1,7 @@
 # Projeto Clima
 
+[![CI](https://github.com/robertrossi/projeto_clima/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/robertrossi/projeto_clima/actions/workflows/ci.yml)
+
 Dashboard Streamlit que compara temperaturas do ar a 2 m para localidades de um catálogo configurável, com filtros por país/estado e consultas atuais, futuras e históricas.
 
 ## Acessar sem instalar
@@ -84,6 +86,8 @@ projeto_clima/
 ```
 
 ## Desenvolvimento
+
+O GitHub Actions executa lint, verificação de formatação, testes com cobertura mínima de 50% e build do MkDocs em pushes à `main`/`feat/**`, pull requests para `main` e execuções manuais na aba **Actions**.
 
 ```bash
 uv run ruff check .

@@ -42,6 +42,14 @@ uv run mkdocs build
 Os testes unitários substituem `urlopen` por respostas simuladas; não precisam chamar a API real.
 O limite de cobertura definido no `pyproject.toml` é 50% do pacote de produção.
 
+## Integração contínua no GitHub
+
+O workflow `.github/workflows/ci.yml` roda em `ubuntu-latest` quando há push para `main` ou
+`feat/**`, em pull requests direcionados a `main` e quando iniciado manualmente pela aba **Actions**.
+Ele instala Python 3.12 e uv 0.13.4, sincroniza o `uv.lock` sem alterá-lo e executa lint, checagem
+de formatação, testes com cobertura mínima de 50% e build do MkDocs. Não usa segredos nem depende
+de chamadas reais à API meteorológica.
+
 ## Documentação
 
 `mkdocs.yml` define Material, idioma, extensões e navegação. As páginas publicadas ficam em `docs/`;
