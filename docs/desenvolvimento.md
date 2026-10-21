@@ -15,7 +15,7 @@ As dependências de desenvolvimento do grupo `dev` são sincronizadas por padrã
 
 | Comando | Ação |
 | --- | --- |
-| `uv run task docs` | Serve a documentação local com recarga automática. |
+| `uv run task docs` | Serve a documentação local em `http://127.0.0.1:8001` com recarga automática. |
 | `uv run task docs-build` | Compila o site estático para `site/`. |
 | `uv run task test` | Executa a suíte pytest em `tests/`. |
 | `uv run task lint` | Executa `ruff check .`. |
