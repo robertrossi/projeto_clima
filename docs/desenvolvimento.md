@@ -50,6 +50,11 @@ Ele instala Python 3.12 e uv 0.13.4, sincroniza o `uv.lock` sem alterá-lo e exe
 de formatação, testes com cobertura mínima de 50% e build do MkDocs. Não usa segredos nem depende
 de chamadas reais à API meteorológica.
 
+O workflow `.github/workflows/deploy-docs.yml` compila o site MkDocs e o publica no GitHub Pages
+em cada push à `main`. O endereço público configurado é
+`https://robertrossi.github.io/projeto_clima/`. Pull requests continuam cobertos pelo build da CI,
+sem publicar versões de prévia.
+
 ## Documentação
 
 `mkdocs.yml` define Material, idioma, extensões e navegação. As páginas publicadas ficam em `docs/`;

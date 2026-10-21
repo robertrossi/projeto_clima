@@ -100,6 +100,8 @@ uv run task docs-build
 
 ## Documentação do site
 
+Depois da primeira publicação, a documentação também estará disponível em [robertrossi.github.io/projeto_clima](https://robertrossi.github.io/projeto_clima/). O workflow `deploy-docs.yml` publica automaticamente a documentação quando há alterações na branch `main`.
+
 Com MkDocs Material e Taskipy instalados no grupo de desenvolvimento:
 
 ```bash
