@@ -1,0 +1,25 @@
+site_name: Projeto Clima
+site_description: Comparação de temperaturas atuais e máximas diárias por localidade.
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Uso: uso.md
+  - Arquitetura: arquitetura.md
+  - API e dados: api.md
+  - Desenvolvimento: desenvolvimento.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
